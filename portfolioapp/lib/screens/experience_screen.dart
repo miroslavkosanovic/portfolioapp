@@ -28,6 +28,18 @@ class ExperienceScreen extends StatelessWidget {
               'NIS a.d. - RPA Developer\nOct 2021 - Feb 2022,',
               style: TextStyle(fontSize: 16),
             ),
+            ElevatedButton(
+              onPressed: () {
+                // Handle button press to show certificate image
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CertificateScreen(),
+                  ),
+                );
+              },
+              child: const Text('View Certificate'),
+            ),
             const Divider(),
             const Text(
               'Education',
@@ -39,11 +51,28 @@ class ExperienceScreen extends StatelessWidget {
             const SizedBox(height: 8),
             // Add your education details here
             Text(
-              'Faculty of Technical Science in Novi Sad - Student of Informational Egieneering\nFinal year',
+              'Faculty of Technical Science in Novi Sad - Student of Informational Engineering\nFinal year',
               style: TextStyle(fontSize: 16),
             ),
             // Add more sections as needed
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CertificateScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Certificate'),
+      ),
+      body: Center(
+        child: Image.asset(
+          'lib/assets/images/certificate.png', // Adjust the path based on your actual file name and extension
+          height: 300, // Adjust the height as needed
         ),
       ),
     );

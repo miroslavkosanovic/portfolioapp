@@ -12,27 +12,32 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Portfolio'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center, // Center content
           children: [
-            // Add the Image
-            Image.network(
-              'https://github.com/miroslavkosanovic/portfolioapp/blob/main/portfolioapp/lib/assets/images/personalPicture.png', // Adjust the path based on your actual file name and extension
-              height: 150, // Adjust the height as needed
+            // Add the Image and center it
+            Center(
+              child: Image.asset(
+                'lib/assets/images/personalPicture.png',
+                height: 150,
+              ),
             ),
             // Introduction Section
+            const SizedBox(
+                height: 16), // Add some space between the image and text
             const Text(
-              'Hello, I\'m Miroslav a motivated junior app developer with experience in Flutter and Dart for mobile application development. Proficient in leveraging these technologies to create engaging and functional apps. Skilled in building efficient data flows within applications and passionate about utilizing technology to address real-world challenges. Excellent communication skills in English, both written and verbal.',
+              'Hello, I\'m Miroslav, a motivated junior app developer with experience in Flutter and Dart for mobile application development. Proficient in leveraging these technologies to create engaging and functional apps. Skilled in building efficient data flows within applications and passionate about utilizing technology to address real-world challenges. Excellent communication skills in English, both written and verbal.',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontSize: 20, // Decrease font size
+                // Remove FontWeight.bold to make it not bold
               ),
+              textAlign: TextAlign.center, // Center text
             ),
             const SizedBox(height: 8),
             const Text(
-              ' Data Scientist | Mobile App Enthusiast',
+              'Data Scientist | Mobile App Enthusiast',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
@@ -73,8 +78,7 @@ class HomeScreen extends StatelessWidget {
             ProjectCard(
               title: 'ETH Transaction crawler',
               description: 'Created a web crawler using Python and HTML...',
-              imageUrl:
-                  'https://raw.githubusercontent.com/miroslavkosanovic/portfolioapp/main/portfolioapp/lib/assets/images/project1.png',
+              imageUrl: 'lib/assets/images/project1.png',
               githubUrl:
                   'https://github.com/your-username/eth-transaction-crawler',
               onTap: () {},
@@ -83,8 +87,7 @@ class HomeScreen extends StatelessWidget {
               title: 'Tumor genome clustering',
               description:
                   'Created an unsupervised learning algorithm to separate...',
-              imageUrl:
-                  'https://raw.githubusercontent.com/miroslavkosanovic/portfolioapp/main/portfolioapp/lib/assets/images/project2.png',
+              imageUrl: 'lib/assets/images/project2.png',
               githubUrl:
                   'https://github.com/your-username/tumor-genome-clustering',
               onTap: () {},
