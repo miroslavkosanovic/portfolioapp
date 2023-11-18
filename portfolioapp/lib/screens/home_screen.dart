@@ -1,47 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/widgets/project_card.dart'; // Import the ProjectCard widget
+import 'package:portfolioapp/widgets/project_card.dart';
+import 'package:portfolioapp/screens/experience_screen.dart';
+// Import the ProjectCard widget
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Portfolio'),
+        title: const Text('My Portfolio'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Add the Image
+            Image.network(
+              'https://github.com/miroslavkosanovic/portfolioapp/blob/main/portfolioapp/lib/assets/images/personalPicture.png', // Adjust the path based on your actual file name and extension
+              height: 150, // Adjust the height as needed
+            ),
             // Introduction Section
-            Text(
-              'Hello, I\'m Miroslav',
+            const Text(
+              'Hello, I\'m Miroslav a motivated junior app developer with experience in Flutter and Dart for mobile application development. Proficient in leveraging these technologies to create engaging and functional apps. Skilled in building efficient data flows within applications and passionate about utilizing technology to address real-world challenges. Excellent communication skills in English, both written and verbal.',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               ' Data Scientist | Mobile App Enthusiast',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Skills Section
-            Text(
+            const Text(
               'Skills',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             // You can use a Row, Wrap, or other widgets to display your skills
-            Wrap(
+            const Wrap(
               spacing: 8,
               children: [
                 Chip(label: Text('Flutter')),
@@ -50,21 +59,22 @@ class HomeScreen extends StatelessWidget {
                 // Add more skills as needed
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Featured Projects Section
-            Text(
+            const Text(
               'Featured Projects',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             ProjectCard(
               title: 'ETH Transaction crawler',
               description: 'Created a web crawler using Python and HTML...',
-              imageUrl: 'assets/images/project1.png',
+              imageUrl:
+                  'https://raw.githubusercontent.com/miroslavkosanovic/portfolioapp/main/portfolioapp/lib/assets/images/project1.png',
               githubUrl:
                   'https://github.com/your-username/eth-transaction-crawler',
               onTap: () {},
@@ -73,10 +83,21 @@ class HomeScreen extends StatelessWidget {
               title: 'Tumor genome clustering',
               description:
                   'Created an unsupervised learning algorithm to separate...',
-              imageUrl: 'assets/images/project2.png',
+              imageUrl:
+                  'https://raw.githubusercontent.com/miroslavkosanovic/portfolioapp/main/portfolioapp/lib/assets/images/project2.png',
               githubUrl:
                   'https://github.com/your-username/tumor-genome-clustering',
               onTap: () {},
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ExperienceScreen()),
+                );
+              },
+              child: const Text('View Experience'),
             ),
             // Add more project cards as needed
           ],
@@ -94,6 +115,7 @@ class ProjectCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const ProjectCard({
+    super.key,
     required this.title,
     required this.description,
     required this.imageUrl,
@@ -123,15 +145,15 @@ class ProjectCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     description,
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),

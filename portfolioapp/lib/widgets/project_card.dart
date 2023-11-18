@@ -10,7 +10,7 @@ class ProjectCard extends StatelessWidget {
   final String githubUrl;
   final VoidCallback onTap;
 
-  const ProjectCard({
+  const ProjectCard({super.key, 
     required this.title,
     required this.description,
     required this.imageUrl,
@@ -26,7 +26,7 @@ class ProjectCard extends StatelessWidget {
           await launch(githubUrl);
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Could not launch the GitHub page.'),
             ),
           );
@@ -50,15 +50,15 @@ class ProjectCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     description,
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),
