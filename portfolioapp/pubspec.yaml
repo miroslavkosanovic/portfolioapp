@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   url_launcher: ^6.0.13
+  provider: ^6.1.1
   flutter:
     sdk: flutter
   
@@ -59,7 +60,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - lib/assets/
+    - lib/assets/images/personalPicture.png
+    - lib/assets/images/project1.png
+    - lib/assets/images/project2.png
+    - lib/assets/images/certificate.png
+    - lib/assets/images/linkedin_logo.png
+    - lib/assets/images/github_logo.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

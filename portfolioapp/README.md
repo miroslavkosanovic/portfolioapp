@@ -1,16 +1,33 @@
-# portfolioapp
+# My Portfolio App
 
-A new Flutter project.
+This Flutter app showcases my portfolio with details about my skills, featured projects, and experience.
 
-## Getting Started
+## How to Run
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Steps
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-portfolio-app.git
+2. Navigate to the project directory:
+    cd portfolioapp
+3. Install dependencies
+    flutter pub get
+4. Run the app:
+    flutter run
+
+## Screenshots 
+
+### Screenshot 1
+
+![Alt text](image.png)
+
+### Screenshot 2
+
+![Alt text](image-1.png)

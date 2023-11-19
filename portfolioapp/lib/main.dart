@@ -3,10 +3,12 @@ import 'package:portfolioapp/screens/home_screen.dart';
 import 'package:portfolioapp/screens/experience_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,8 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
-        '/experience': (context) => ExperienceScreen(), // Add this route
+        '/': (context) => const HomeScreen(),
+        '/experience': (context) => const ExperienceScreen(), // Add this route
       },
     );
   }

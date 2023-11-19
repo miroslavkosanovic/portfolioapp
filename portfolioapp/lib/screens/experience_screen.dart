@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class ExperienceScreen extends StatelessWidget {
-  const ExperienceScreen({Key? key}) : super(key: key);
+  const ExperienceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ExperienceScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             // Add your work experience details here
-            Text(
+            const Text(
               'NIS a.d. - RPA Developer\nOct 2021 - Feb 2022,',
               style: TextStyle(fontSize: 16),
             ),
@@ -34,7 +34,7 @@ class ExperienceScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CertificateScreen(),
+                    builder: (context) => const CertificateScreen(),
                   ),
                 );
               },
@@ -50,7 +50,7 @@ class ExperienceScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             // Add your education details here
-            Text(
+            const Text(
               'Faculty of Technical Science in Novi Sad - Student of Informational Engineering\nFinal year',
               style: TextStyle(fontSize: 16),
             ),
@@ -63,6 +63,8 @@ class ExperienceScreen extends StatelessWidget {
 }
 
 class CertificateScreen extends StatelessWidget {
+  const CertificateScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
